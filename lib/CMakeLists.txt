@@ -10,3 +10,23 @@ include_directories( bamtools/src )
 
 # list subdirectories to build in
 add_subdirectory( bamtools/src/api )
+
+project( SamTools )
+
+# BamTools version information
+set (BamTools_VERSION_MAJOR 1)
+set (BamTools_VERSION_MINOR 3)
+set (BamTools_VERSION_BUILD 0)
+
+# add our includes root path
+include_directories( samtools )
+
+project( HTSLib )
+
+# BamTools version information
+set (BamTools_VERSION_MAJOR 1)
+set (BamTools_VERSION_MINOR 3)
+set (BamTools_VERSION_BUILD 0)
+
+# add our includes root path
+include_directories( htslib )

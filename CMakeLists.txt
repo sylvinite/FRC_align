@@ -19,7 +19,8 @@ include_directories("${PROJECT_SOURCE_DIR}/src")
 include_directories("${PROJECT_SOURCE_DIR}/lib/")
 include_directories("${PROJECT_SOURCE_DIR}/lib/bamtools/src")
 include_directories( ${Boost_INCLUDE_DIRS} )
-
+include_directories("${PROJECT_SOURCE_DIR}/lib/samtools")
+include_directories("${PROJECT_SOURCE_DIR}/lib/htslib")
 
 # sources to compile
 file(GLOB FRC_FILES
@@ -27,6 +28,7 @@ file(GLOB FRC_FILES
     ${PROJECT_SOURCE_DIR}/src/data_structures/Contig.cpp
     ${PROJECT_SOURCE_DIR}/src/data_structures/Features.cpp
     ${PROJECT_SOURCE_DIR}/src/data_structures/FRC.cpp
+    ${PROJECT_SOURCE_DIR}/src/data_structures/qaTools.cpp
 )
 
 
@@ -37,5 +39,5 @@ add_executable(FRC ${FRC_FILES})
 target_link_libraries(FRC ${ZLIB_LIBRARIES})
 target_link_libraries(FRC  BamTools)
 target_link_libraries(FRC ${Boost_LIBRARIES})
-
-
+target_link_libraries(FRC  SamTools)
+target_link_libraries(FRC  HTSLib)
